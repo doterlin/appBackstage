@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>广告物料录入</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/style.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div class="screening">
+			<select class="">
+				<option value="" selected>全部物料</option>
+				<option value="">编辑</option>
+				<option value="">等待审核</option>
+				<option value="">被退回</option>
+				<option value="">投放中</option>
+				<option value="">投放结束</option>
+			</select>
+			<input type="search" placeholder="请输入广告位置代码或物料的关键字" results=" " class="w230">
+			<input type="button" value="搜索" >
+			<a href="#" class="fr mr10 btn">+ 新增</a>
+			<a href="#" class="fr btn">- 删除</a></div>
+		<table  class="main" >
+			<thead>
+				<tr>
+					<th><input type="checkbox"></th>
+					<th>No</th>
+					<th>投放位置</th>
+					<th>投放状态</th>
+					<th>缩略图</th>
+					<th>物料名称</th>
+					<th>广告主</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>1</td>
+					<td>HP-01</td>
+					<td>编辑</td>
+					<td><img src="images/u248.png"></td>
+					<td>新罗畅游礼包</td>
+					<td>新罗免税店</td>
+					<td>
+						<a href="#">修改</a>
+						<a href="#">提交审核</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>2</td>
+					<td>HP-01</td>
+					<td>被退回</td>
+					<td><img src="images/u246.png"></td>
+					<td>海蓝之谜的世界</td>
+					<td>新罗免税店</td>
+					<td>
+						<a href="#">修改</a>
+						<a href="#">提交审核</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>3</td>
+					<td>HP-01</td>
+					<td>投放中</td>
+					<td><img src="images/u244.png"></td>
+					<td>8月特别惊喜优惠大全向导</td>
+					<td>新罗免税店</td>
+					<td>
+						<a href="#">修改</a>
+						<a href="#">提交审核</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>4</td>
+					<td>HP-02</td>
+					<td>投放结束</td>
+					<td><img src="images/u250.png"></td>
+					<td>治愈系化妆单品推荐</td>
+					<td>新罗免税店</td>
+					<td>
+						<a href="#">修改</a>
+						<a href="#">提交审核</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="page_num mt10">
+			<p class="fl">共 4 项，共 1 页</p>
+			<p class="fr">
+				<a href="#">首页</a>
+				<a href="#">上一页</a>
+				当前是第 <span>1</span> 页
+				<a href="#">下一页</a>
+				<a href="#">尾页</a>
+			</p>
+		</div>
+	</div>
+</body>
+</html>

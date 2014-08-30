@@ -1,0 +1,39 @@
+/*
+	***************
+	公共类
+	***************
+*/
+
+.fl{ float: left;}
+.fr{ float: right}
+.w180{ width: 180px;}
+.w230{ width: 230px;}
+.mt10{ margin-top: 6px;}
+.mt20{ margin-top: 20px;}
+.mr10{ margin-left: 10px;}
+.gbc_blue{ background-color: #D3E1F1;}
+.c1{color: #666;}
+.bdc_gray{ border-color: #797979;}
+.btn{  color: #666; background-image: -moz-linear-gradient(top, #fff, #BCD6F5); /* Firefox */
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #DBEAFC), color-stop(1, #BCD6F5)); /* Saf4+, Chrome */
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DBEAFC', endColorstr='#BCD6F5', GradientType='0'); /* IE*/}
+.btn_hover{background-color: #B9D3F5;  color: #fff;}
+a.btn,.btn_hover{padding:7px 20px; border: 1px solid #ccc;text-decoration: none;-webkit-box-shadow: inset 0 1px 0 white; -moz-box-shadow: inset 0 1px 0 white; box-shadow: inset 0 1px 0 white;}
+a.btn_hover:hover{ text-decoration: none;}
+.btn_center{ text-align: center;}
+
+.star{ color: red;}
+
+.input_div{ text-align: left; padding: 10px 0;}
+
+/* 表格样式 */
+table.main{ text-align: center;font-size:12px; color:#333333; border-width: 1px; border-color: #797979; border-collapse: collapse;}
+table.main th{ border-width: 1px; border-style: solid; border-color: #ccc;background-color: #CBD8FC; -webkit-box-shadow: inset 0 1px 0 white; -moz-box-shadow: inset 0 1px 0 white;box-shadow: inset 0 1px 0 white;}
+table td{ border-width: 1px; border-style: solid;border-color: #ccc; background-color: #ffffff; font-family: "微软雅黑";  }
+table.main td img{ width: 140px; }
+
+/* 弹出框样式 */
+.alert_bg { width: 100%;height: 100%;position: absolute;top: 0px;left: 0px;right:0px;background-color: #7C7C7C; filter:alpha(opacity=50); -moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5; z-index:10000;}
+.alert{ border:8px solid #909090; z-index:10001;width:600px; background:white; position:absolute; left:35%; top:10%; font-size:12px; margin-left:-300px; }
+.alert_header{ border-bottom: 3px solid #ccc; padding: 10px; text-align: left; font-size: 14px; font-weight: bold; background-color: #CBD8FC; -webkit-box-shadow: inset 0 1px 0 white; -moz-box-shadow: inset 0 1px 0 white;box-shadow: inset 0 1px 0 white;}
+.alert_content{ padding: 30px;}
