@@ -11,6 +11,42 @@
 </head>
 <body>
 	<div id="container">
+		<div class="alert" style="display: none;">
+			<div class="alert_header">目的地国家</div>
+			<div class="alert_content">
+				<form>
+					<div class="input_div" style="padding-top:0;">
+						<label for="">所属大洲：</label>
+						<select class="w180">
+							<option value="" selected>亚洲</option>
+							<option value="">欧洲</option>
+							<option value="">北美洲</option>
+						</select></div>
+					<div class="input_div">
+						<label for="" class="w110">国家/地区名称：</label>
+						<input type="text"  name="" id="" value="" class="w230">
+					</div>
+					<div class="input_div">
+						<label for="" class="w110">ISO国家代码：</label>
+						<input type="text"  name="" id="" value="" class="w230">
+					</div>
+					<div class="input_div">
+						<label for="" class="w110">货币名称：</label>
+						<input type="text"  name="" id="" value="" class="w230">
+					</div>
+					<div class="input_div">
+						<label for="" class="w110">货币符号：</label>
+						<input type="text"  name="" id="" value="" class="w230">
+					</div>
+					<div class="btn_center mt20">
+						<a href="#" class="btn" id="cancel">取消</a>
+						<a href="#" class="mr10 btn">保存</a>
+						<a href="#" class="mr10 btn">保存并提交审核</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="alert_bg" style="display: none;"></div>
 		<div class="screening">
 			<select class="">
 				<option value="" selected>请选择所属大洲</option>
@@ -21,7 +57,7 @@
 			<input type="search" placeholder="请输入国家名称的关键字" results=" " class="w230">
 			<input type="button" value="搜索" >
 
-			<a href="#" class="fr mr10 btn">+ 新增</a>
+			<a href="#" class="fr mr10 btn" id="add">+ 新增</a>
 			<a href="#" class="fr mr10 btn">- 删除</a><a href="#" class="fr btn">+ 批量推荐</a></div>
 		<table  class="main" >
 			<thead>

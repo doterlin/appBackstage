@@ -9,7 +9,10 @@ $(document).ready(function(){
 		$(this).removeClass("btn_hover").addClass("btn");
 	});
 	/*状态颜色*/
-
+	$("td:contains(已发布)").css("color","green");
+	$("td:contains(等待审核)").css("color","gray");
+	$("td:contains(审核未通过)").css("color","red");
+	$("td:contains(撤销发布)").css("color","red");
 	/*新增*/
 	$("#add").click(function(){
 		$(".alert_bg").css("display","block");
@@ -24,5 +27,4 @@ $(document).ready(function(){
 		$(".alert").fadeOut("fast");
 		$(".alert_bg").css("display","none");
 	});
-	/*返回*/
 });
