@@ -11,6 +11,33 @@
 </head>
 <body>
 	<div id="container">
+		<div class="alert" style="display: none;">
+			<div class="alert_header">广告物料</div>
+			<div class="alert_content">
+				<form>
+					<div class="input_div" style="padding-top:0;">
+						<label for="infor_type">计划投放位置：</label>
+						<select class="w180">
+							<option value="" selected>首页轮播大幅广告(HP-01)</option>
+							<option value="" selected>首页横幅(HP-02)</option>
+						</select><span class="star"> 提示：</span><span class="text_gray">HP-01（286 x 208， &lt;300KB ）</span></div>
+					<div class="input_div">
+						<label for="infor_type">上传广告物料：</label>
+						<input type="file" id="" class="w230"><a href="#" class="btn">上传</a></div>
+						<div id="img_display"><span class="text_gray tar wp100">[ <a href="#" class="text_gray">删除</a> ]</span></div>		
+					<div class="input_div">
+						<label for="">广告点击链接：</label>
+						<input type="text"  name="" id="" value="" class="w230">
+					</div>
+					<div class="btn_center mt20">
+						<a href="#" class="btn" id="cancel">取消</a>
+						<a href="#" class="mr10 btn">保存</a>
+						<a href="#" class="mr10 btn">保存并提交审核</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="alert_bg" style="display: none;"></div>
 		<div class="screening">
 			<select class="">
 				<option value="" selected>全部物料</option>
@@ -22,7 +49,7 @@
 			</select>
 			<input type="search" placeholder="请输入广告位置代码或物料的关键字" results=" " class="w230">
 			<input type="button" value="搜索" >
-			<a href="#" class="fr mr10 btn">+ 新增</a>
+			<a href="#" class="fr mr10 btn" id="add">+ 新增</a>
 			<a href="#" class="fr btn">- 删除</a></div>
 		<table  class="main" >
 			<thead>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>广告发布</title>
+	<title>待审核的广告物料</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/layout.css">
@@ -12,21 +12,20 @@
 <body>
 	<div id="container">
 		<div class="screening">
-			<select class="">
-				<option value="" selected>全部可用广告位</option>
-				<option value="">首页轮播大幅广告(HP-01)</option>
-				<option value="">首页横幅Banner(HP-02)</option>
-			</select>
-		</div>
+			<span class="text_gray">首页轮播大幅广告（HP-01）：待审核的广告物料</span>
+			
+			<a href="#" class="fr mr10 btn" id="add">+ 批量发布</a>
+			<a href="#" class="fr mr10 btn">- 批量收回</a>
+			<a href="javascript:history.go(-1);" class="fr btn">&lt; 返回</a></div>
 		<table  class="main" >
 			<thead>
 				<tr>
 					<th><input type="checkbox"></th>
 					<th>No</th>
-					<th>广告位代码</th>
-					<th>广告位名称</th>
-					<th>当前发布状态</th>
-					<th>待审核物料</th>
+					<th>物料缩略图</th>
+					<th>物料名称</th>
+					<th>广告主</th>
+					<th>计划投放日期</th>
 					<th>操作</th>
 				</tr>
 			</thead>
@@ -35,28 +34,26 @@
 					<td>
 						<input type="checkbox"></td>
 					<td>1</td>
-					<td>HP-01</td>
-					<td>首页轮播大幅广告</td>
-					<td>3 / 5</td>
-					<td>1</td>
+					<td><img src="images/u248.png"></td>
+					<td>新罗畅游礼包</td>
+					<td>官方</td>
+					<td>2014-08-27</td>
 					<td>
-						<a href="ad_publish_wait.html">待审核</a>
-						<a href="#">投放中</a>
-						<a href="#">投放历史</a>
+						<a href="#">允许投放</a>
+						<a href="#">退回修改</a>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<input type="checkbox"></td>
-					<td>2</td>
-					<td>HP-02</td>
-					<td>首页横幅Banner</td>
-					<td>8 / 10</td>
-					<td>2</td>
+					<td>1</td>
+					<td><img src="images/u248.png"></td>
+					<td>新罗畅游礼包</td>
+					<td>官方</td>
+					<td>2014-08-27</td>
 					<td>
-						<a href="ad_publish_wait.html">待审核</a>
-						<a href="#">投放中</a>
-						<a href="#">投放历史</a>
+						<a href="#">允许投放</a>
+						<a href="#">退回修改</a>
 					</td>
 				</tr>
 			</tbody>

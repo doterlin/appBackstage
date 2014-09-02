@@ -4,13 +4,42 @@
 	<title>信息发布</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/layout.css">
 	<link rel="stylesheet" type="text/css" href="css/public.css">
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="js/style.js"></script>
 </head>
 <body>
 	<div id="container">
+		<div class="alert" style="display: none;">
+			<div class="alert_header">信息发布</div>
+			<div class="alert_content">
+				<form>
+					<div class="input_div" style="padding-top:0;">
+						<label for="infor_type">所属分类：</label>
+						<input type="radio" name="infor_type" id="infor_type_U" checked="checked">
+						环球优享自有
+						&nbsp;
+						<input type="radio" name="infor_type" id="infor_type_termini">目的地信息</div>
+					<div class="input_div">
+						<label for="infor_name">分类名称：</label>
+						<input type="input" name="infor_name" id="infor_name" value="" class="w180"></div>
+					<div class="input_div">
+						<label for="infor_dir">指定目录：</label>
+						<input type="input"  name="infor_dir" id="infor_dir" value="" class="w180">
+						<span>
+							&nbsp;
+							<span class="star">*</span>
+							一旦保存成功，该项将无法修改
+						</span>
+					</div>
+					<div class="btn_center mt20">
+						<a href="#" class="btn" id="cancel">取消</a>
+						<a href="#" class="mr10 btn">保存</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="alert_bg" style="display: none;"></div>
 		<div class="screening">
 			<select>
 				<option value="" selected>待审核</option>

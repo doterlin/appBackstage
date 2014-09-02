@@ -11,16 +11,65 @@
 </head>
 <body>
 	<div id="container">
+		<div class="alert" style="display: none;">
+			<div class="alert_header">自运营达人</div>
+			<div class="alert_content">
+				<form>
+					<div class="input_div">
+						<div class="input_div fl mt0">
+							<label for="infor_type" class="fl">达人头像：</label>
+							<a href="#"><img class="img_head"></a> <span class="text_gray tar">[ <a href="#" class="text_gray">删除</a> ]</span></div>
+						<div class="input_div  fr">
+							<div class="input_div mt-10" >
+								<label for="master_sex">达人性别：</label>
+								<input type="radio" name="master_sex">
+								美女
+								<input type="radio" name="master_sex" checked>
+								帅哥
+								<input type="radio" name="master_sex">不明</div>
+							<div class="input_div">
+								<label for="">达人昵称：</label>
+								<input type="input"  name="" id="" value="" class="w180"></div>
+							<div class="input_div">
+								<label for="">达人头衔：</label>
+								<input type="input"  name="" id="" value="" class="w180"></div>
+						</div>
+					</div>
+					<div class="input_div cb">
+						<label for="">达人签名：</label>
+						<input type="text" value="" class="w460"></div>
+					<div class="input_div cb">
+						<div class="input_div fl lh22">
+							<label for="master_Recommend">是否推荐：</label>
+							<input type="radio" name="master_Recommend" checked>
+							否
+							<input type="radio" name="master_Recommend">推荐关注</div>
+						<div class="input_div fr">
+							<label for="">粉丝值修正：</label>
+							+
+							<input type="input" name="" id="" value="" class="w180"></div>
+					</div>
+					<div class="btn_center mt50 cb">
+						<a href="#" class="btn" id="cancel">取消</a>
+						<a href="#" class="mr10 btn">保存</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="alert_bg" style="display: none;"></div>
 		<div class="screening">
 			<input type="search" placeholder="请输入达人昵称关键字" results=" " class="w230">
 			<input type="button" value="搜索" >
 
-			<a href="#" class="fr mr10 btn">+ 新增</a>
-			<a href="#" class="fr mr10 btn">- 删除</a><a href="#" class="fr btn">+ 批量推荐</a></div>
+			<a href="#" class="fr mr10 btn" id="add">+ 新增</a>
+			<a href="#" class="fr mr10 btn">- 删除</a>
+			<a href="#" class="fr btn">+ 批量推荐</a>
+		</div>
 		<table  class="main" >
 			<thead>
 				<tr>
-					<th><input type="checkbox"></th>
+					<th>
+						<input type="checkbox"></th>
 					<th>No</th>
 					<th>达人昵称</th>
 					<th>性别</th>
@@ -160,7 +209,9 @@
 			<p class="fr">
 				<a href="#">首页</a>
 				<a href="#">上一页</a>
-				当前是第 <span>1</span> 页
+				当前是第
+				<span>1</span>
+				页
 				<a href="#">下一页</a>
 				<a href="#">尾页</a>
 			</p>

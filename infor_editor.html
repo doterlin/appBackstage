@@ -11,6 +11,52 @@
 </head>
 <body>
 	<div id="container">
+		<div class="alert" style="display: none;">
+			<div class="alert_header">信息类别</div>
+			<div class="alert_content">
+				<form>
+					<div class="input_div" style="padding-top:0;">
+						<label for="infor_type">所属分类：</label>
+						<select class="">
+							<option value="" selected>请选择信息分类</option>
+							<option value="">Wi-Fi相关业务介绍</option>
+							<option value="">U享会相关报道</option>
+							<option value="">旅游达人相关介绍</option>
+							<option value="">环球优享APP推广相关</option>
+							<option value="">旅游忠告</option>
+							<option value="">证件遗失</option>
+							<option value="">物品遗失</option>
+							<option value="">防欺诈</option>
+						</select>&nbsp;
+						<label for="">所属估计国家：</label>
+						<select class="">
+							<option value="" selected>请选择国家</option>
+							<option value="">——</option>
+							<option value="">韩国</option>
+							<option value="">日本</option>
+							<option value="">印度尼西亚</option>
+						</select>
+					</div>
+					<div class="input_div">
+						<label for="">标题：</label>
+						<input type="input" style="width:80%;" name="infor_name" id="infor_name" value="" class="w180"></div>
+					<div class="input_div">
+						<label for="infor_dir">正文部分：</label>
+						<input type="input"  name="infor_dir" id="infor_dir" value="" class="w180">
+						<span>
+							&nbsp;
+							<span class="star">*</span>
+							一旦保存成功，该项将无法修改
+						</span>
+					</div>
+					<div class="btn_center mt20">
+						<a href="#" class="btn" id="cancel">取消</a>
+						<a href="#" class="mr10 btn">保存</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="alert_bg" style="display: none;"></div>
 		<div class="screening">
 			<select class="">
 				<option value="" selected>请选择信息分类</option>
@@ -30,12 +76,14 @@
 				<option value="">日本</option>
 				<option value="">印度尼西亚</option>
 			</select>
-			<a href="#" class="fr mr10 btn">+ 新增</a>
-			<a href="#" class="fr btn">- 删除</a></div>
+			<a href="#" class="fr mr10 btn"  id="add">+ 新增</a>
+			<a href="#" class="fr btn">- 删除</a>
+		</div>
 		<table  class="main" >
 			<thead>
 				<tr>
-					<th><input type="checkbox"></th>
+					<th>
+						<input type="checkbox"></th>
 					<th>No</th>
 					<th>标题</th>
 					<th>所属分类</th>
@@ -143,7 +191,9 @@
 			<p class="fr">
 				<a href="#">首页</a>
 				<a href="#">上一页</a>
-				当前是第 <span>1</span> 页
+				当前是第
+				<span>1</span>
+				页
 				<a href="#">下一页</a>
 				<a href="#">尾页</a>
 			</p>
