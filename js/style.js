@@ -21,9 +21,18 @@ $(document).ready(function(){
 	$("td a").click(function(){
 		if($(this).text()=="修改"){
 			$(".alert_bg").css("display","block");
-			$(".alert").fadeIn("fast");}
+			$(".alert").not("#alert_2").fadeIn("fast");}
 	});
-	$("#cancel").click(function(){	
+	$("td a").click(function(){
+		if($(this).text()=="紧急电话"){
+			$(".alert_bg").css("display","block");
+			$("#alert_2").fadeIn("fast");}
+	});
+	$("#cancel_1").click(function(){	
+		$(".alert").fadeOut("fast");
+		$(".alert_bg").css("display","none");
+	});
+	$("#cancel_2").click(function(){	
 		$(".alert").fadeOut("fast");
 		$(".alert_bg").css("display","none");
 	});

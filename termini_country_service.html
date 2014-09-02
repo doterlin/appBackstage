@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>服务机构</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/style.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div class="alert" style="display: none;">
+			<div class="alert_header">服务机构<small>当前国家：<span>韩国</span></small></div>
+			<div class="alert_content">
+				<form>
+					<div class="input_div" style="padding-top:0;">
+						<label for="infor_type">机构名称：</label>
+						<input type="text" id="" class="w230"></div>
+
+					<div class="input_div">
+						<label for="infor_type">联系电话：</label>
+						<input type="text" id="" class="w230"> &nbsp;&nbsp;<input type="checkbox"> 我国大使馆默认联系电话</div>
+					<div class="btn_center mt20">
+						<a href="#" class="btn" id="cancel">取消</a>
+						<a href="#" class="mr10 btn">保存</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="alert_bg" style="display: none;"></div>
+		<div class="screening">
+			<a href="#" class="fr mr10 btn" id="add">+ 新增</a>
+			<a href="#" class="fr mr10 btn">- 删除</a>
+			<a href="javascript:history.go(-1);" class="fr btn">&lt; 返回</a></div>
+		<table  class="main" >
+			<thead>
+				<tr>
+					<th><input type="checkbox"></th>
+					<th>No</th>
+					<th>机构名称</th>
+					<th>电话</th>
+					<th>我国大使馆</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>1</td>
+					<td>【中国大使馆】</td>
+					<td>02-738-1038</td>
+					<td>默认</td>
+					<td>
+						<a href="#">修改</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>1</td>
+					<td>【中国大使馆领事部】办理证件业务</td>
+					<td>02-756-7300</td>
+					<td>——</td>
+					<td>
+						<a href="#">修改</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>1</td>
+					<td>【高丽大学附属医院】</td>
+					<td>02-920-5373</td>
+					<td>——</td>
+					<td>
+						<a href="#">修改</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="page_num mt10">
+			<p class="fl">共 2 项，共 1 页</p>
+			<p class="fr">
+				<a href="#">首页</a>
+				<a href="#">上一页</a>
+				当前是第 <span>1</span> 页
+				<a href="#">下一页</a>
+				<a href="#">尾页</a>
+			</p>
+		</div>
+	</div>
+</body>
+</html>
