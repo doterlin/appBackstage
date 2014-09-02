@@ -28,7 +28,7 @@ $(document).ready(function(){
 			$(".alert_bg").css("display","block");
 			$("#alert_2").fadeIn("fast");}
 	});
-	$("#cancel_1").click(function(){	
+	$("#cancel").click(function(){	
 		$(".alert").fadeOut("fast");
 		$(".alert_bg").css("display","none");
 	});
