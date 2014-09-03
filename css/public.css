@@ -69,5 +69,5 @@ table.main td img{ width: 140px; }
 .input_div label{ text-align: right; display:inline-block; text-align:right; width: 110px;}
 
 /* 上传图片显示 */
-.img_display{ width: 300px; margin-left: 90px;}
+#img_display img{ width: 200px; margin-left: 120px;}
 .img_head{width: 100px;height: 100px;}
