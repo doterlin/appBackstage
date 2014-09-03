@@ -7,6 +7,24 @@
 	<link rel="stylesheet" type="text/css" href="css/public.css">
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="js/style.js"></script>
+	<link rel="stylesheet" href="editor/themes/default/default.css" />
+	<script charset="utf-8" src="editor/kindeditor-min.js"></script>
+	<script charset="utf-8" src="editor/lang/zh_CN.js"></script>
+	<script>
+		var editor;
+		KindEditor.ready(function(K) {
+			editor = K.create('textarea[name="content"]', {
+				resizeType : 1,
+				allowPreviewEmoticons : false,
+				allowImageUpload : true,
+				items : [
+					'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+					'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+					'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+			});
+
+		});
+	</script>
 </head>
 <body>
 	<div id="container">
@@ -21,20 +39,19 @@
 						&nbsp;
 						<input type="radio" name="infor_type" id="infor_type_termini">目的地信息</div>
 					<div class="input_div">
-						<label for="infor_name">分类名称：</label>
-						<input type="input" name="infor_name" id="infor_name" value="" class="w180"></div>
+						<label for="">标题：</label>
+						<input type="input" name="infor_name" id="infor_name" value="" class="w230"></div>
 					<div class="input_div">
-						<label for="infor_dir">指定目录：</label>
-						<input type="input"  name="infor_dir" id="infor_dir" value="" class="w180">
-						<span>
-							&nbsp;
-							<span class="star">*</span>
-							一旦保存成功，该项将无法修改
-						</span>
+						<label for="infor_dir">正文部分：</label>
+						<input type="input"  name="infor_dir" id="infor_dir" value="" class="w400"></div>
+					<div class="input_div">
+						<textarea name="content" style="width:100%;height:200px;visibility:hidden;"></textarea>
 					</div>
 					<div class="btn_center mt20">
-						<a href="#" class="btn" id="cancel">取消</a>
+						<a href="#" class="btn">审核不合格</a>
+						<a href="#" class="mr10 btn" id="cancel">取消</a>
 						<a href="#" class="mr10 btn">保存</a>
+						<a href="#" class="mr10 btn">保存并通过审核</a>
 					</div>
 				</form>
 			</div>
@@ -154,5 +171,19 @@
 			</p>
 		</div>
 	</div>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("tr td").css("cursor","pointer");
+		$("tr td").not(":first-child").click(function(){
+			$(".alert_bg").css("display","block");
+			$(".alert").not("#alert_2").fadeIn("fast");
+		});
+	})
+	/*click(function(){
+		if($(this).text()=="修改"){
+			$(".alert_bg").css("display","block");
+			$(".alert").not("#alert_2").fadeIn("fast");
+		};*/
+	</script>
 </body>
 </html>

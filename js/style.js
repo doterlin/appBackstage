@@ -11,7 +11,7 @@ $(document).ready(function(){
 	/* 全选 */
 	$("th :checkbox").change(function(){		
 			$("tr :checkbox").attr("checked",this.checked);;
-	})
+	});
 	/* 状态颜色 */
 	$("td:contains(已发布)").css("color","green");
 	$("td:contains(等待审核)").css("color","gray");
@@ -40,6 +40,5 @@ $(document).ready(function(){
 		$(".alert").fadeOut("fast");
 		$(".alert_bg").css("display","none");
 	});
-	
 
 });
