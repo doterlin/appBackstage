@@ -1,19 +1,23 @@
 $(document).ready(function(){
 
-	/*表格条纹*/
+	/* 表格条纹 */
 	$("tbody>tr:odd").children().css("background-color","#EDEDED");
-	/*按钮效果*/
+	/* 按钮效果 */
 	$(".btn").mouseover(function(){
 		$(this).removeClass("btn").addClass("btn_hover");
 	}).mouseout(function(){
 		$(this).removeClass("btn_hover").addClass("btn");
 	});
-	/*状态颜色*/
+	/* 全选 */
+	$("th :checkbox").change(function(){		
+			$("tr :checkbox").attr("checked",this.checked);;
+	})
+	/* 状态颜色 */
 	$("td:contains(已发布)").css("color","green");
 	$("td:contains(等待审核)").css("color","gray");
 	$("td:contains(审核未通过)").css("color","red");
 	$("td:contains(撤销发布)").css("color","red");
-	/*新增*/
+	/* 新增 */
 	$("#add").click(function(){
 		$(".alert_bg").css("display","block");
 		$(".alert").fadeIn("fast");
@@ -36,4 +40,6 @@ $(document).ready(function(){
 		$(".alert").fadeOut("fast");
 		$(".alert_bg").css("display","none");
 	});
+	
+
 });
