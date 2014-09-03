@@ -42,11 +42,11 @@ $(document).ready(function(){
 	});
 	/* 获取图片路径并显示，可选删除*/
 	$("#img_upload").change(function(){
-		$("#img_display img").attr("src","images/u244.png");//修改此路径显示图片
+		$("#img_display img").attr("src","images/u244.png");//修改此路径
 		$("#img_display").append('<span class="text_gray tar wp100">[ <a id="img_display_delete" href="#" class="text_gray">删除</a> ]</span>');
 	});
 	$("#img_display a").click(function(){
 		alert("111");
 		$("#img_display img").remove();
-	})；
+	})
 });
