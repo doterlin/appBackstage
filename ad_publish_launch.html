@@ -65,5 +65,13 @@
 			</p>
 		</div>
 	</div>
+	<script type="text/javascript">
+	$("td a").click(function(){
+		if($(this).text()=="撤销投放"){
+			$.comfirmWindow("提示","确定停止该广告投放计划？",'<a href="#" class="btn" id="comfirm_cencer">取消</a><a href="#" id="comfirm_comfirm" class="mr10 btn">确认</a>');
+			$.comfirmWindowClose("广告已经下线！","投放计划：ADP_20140827_0001_0000");
+		};
+	});
+	</script>
 </body>
 </html>

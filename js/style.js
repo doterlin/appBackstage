@@ -1,5 +1,9 @@
 $(document).ready(function(){
 
+	/*全局添加comfirm的html*/
+		var comfirm_html='<div class="alert_bg" style="display: none;"></div><div class="comfirm" style="display: none;" ><div class="comfirm_header"></div><div class="comfirm_content"><form><div class="input_div" id="comfirm_msg" style="padding-top:0;"></div><div class="btn_center mt20" id="comfirm_footer"></div></form></div></div>';
+		$("body").append(comfirm_html);
+
 	/* 确认框方法*/
 	jQuery.comfirmWindow = function(tittle,msg,footer){	
 		$(".alert_bg").show();
@@ -20,8 +24,9 @@ $(document).ready(function(){
 		$("#comfirm_comfirm").click(function(){	
 					$(".comfirm").fadeOut("fast");
 					$(".alert_bg").css("display","none");
-					$("form").submit(); //提交表单.成功后下面显示提示
+					
 					$(".comfirm").queue(function(){
+						//提交表单.成功后下面显示提示
 						$("#comfirm_msg").html('');
 						$(".comfirm_header").html('');
 						$("#comfirm_footer").html('');
@@ -33,6 +38,7 @@ $(document).ready(function(){
 								$("#comfirm_msg").html('');
 								$(".comfirm_header").html('');
 								$("#comfirm_footer").html('');
+								$("form").submit(); 
 							});
 						}
 						$(this).dequeue();
@@ -48,9 +54,7 @@ $(document).ready(function(){
 		$(this).removeClass("btn_hover").addClass("btn");
 	});
 
-	/*全局添加comfirm的html*/
-	var comfirm_html='<div class="alert_bg" style="display: none;"></div><div class="comfirm" style="display: none;" ><div class="comfirm_header"></div><div class="comfirm_content"><form><div class="input_div" id="comfirm_msg" style="padding-top:0;"></div><div class="btn_center mt20" id="comfirm_footer"></div></form></div></div>';
-	$("body").append(comfirm_html);
+	
 
 	/* 全选 */
 	$("th :checkbox").change(function(){		

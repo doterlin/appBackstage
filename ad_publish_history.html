@@ -70,5 +70,17 @@
 			</p>
 		</div>
 	</div>
+	<script type="text/javascript">
+	$("td a").click(function(){
+		if($(this).text()=="再次投放"){
+			$.comfirmWindow("提示","确定将该广告投放到线上？",'<a href="#" class="btn" id="comfirm_cencer">取消</a><a href="#" id="comfirm_comfirm" class="mr10 btn">确认</a>');
+			$.comfirmWindowClose("投放成功!","投放计划：ADP_20140827_0001_0002");
+		};
+		if($(this).text()=="删除"){
+			$.comfirmWindow("提示","确定要删除该广告投放的记录么？",'<a href="#" class="btn" id="comfirm_cencer">取消</a><a href="#" id="comfirm_comfirm" class="mr10 btn">确认</a>');
+			$.comfirmWindowClose("删除成功！","投放计划：ADP_20140827_0001_0001");
+		};
+	});
+	</script>
 </body>
 </html>
