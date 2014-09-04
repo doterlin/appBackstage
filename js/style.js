@@ -13,10 +13,14 @@ $(document).ready(function(){
 			$("tr :checkbox").attr("checked",this.checked);;
 	});
 	/* 状态颜色 */
+	$("td:contains(编辑)").css("color","blue");
 	$("td:contains(已发布)").css("color","green");
+	$("td:contains(投放中)").css("color","green");
 	$("td:contains(等待审核)").css("color","gray");
+	$("td:contains(投放结束)").css("color","gray");
 	$("td:contains(审核未通过)").css("color","red");
 	$("td:contains(撤销发布)").css("color","red");
+	$("td:contains(被退回)").css("color","red");
 	/* 新增 */
 	$("#add").click(function(){
 		$(".alert_bg").css("display","block");
