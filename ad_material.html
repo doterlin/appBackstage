@@ -14,12 +14,12 @@
 		<div class="alert" style="display: none;">
 			<div class="alert_header">广告物料</div>
 			<div class="alert_content">
-				<form>
+				<form name="form1" method="post" action="test.txt">
 					<div class="input_div" style="padding-top:0;">
 						<label for="infor_type">计划投放位置：</label>
-						<select class="w180">
+						<select name="launch-position" id="launch_position" class="w180">
 							<option value="" selected>首页轮播大幅广告(HP-01)</option>
-							<option value="" selected>首页横幅(HP-02)</option>
+							<option value="">首页横幅(HP-02)</option>
 						</select><span class="star"> 提示：</span><span class="text_gray">HP-01(286 x 208，&lt;300KB)</span></div>
 					<div class="input_div">
 						<label for="infor_type">上传广告物料：</label>
@@ -145,9 +145,12 @@
 			</div>
 		</div>
 	<script type="text/javascript">
-	
-	/*	$.comfirmWindow("提示","确认提交吗","<a href="#" class="btn" id="cancel">取消</a>
-						<a href="#" id="comfirm_comfirm" class="mr10 btn">确认</a>");*/
+	$("td a").click(function(){
+		if($(this).text()=="提交审核"){
+			$.comfirmWindow("提示","确认提交吗",'<a href="#" class="btn" id="comfirm_cencer">取消</a><a href="#" id="comfirm_comfirm" class="mr10 btn">确认</a>');
+			$.comfirmWindowClose("投放成功","投放计划ZXXX");
+		};
+	});
 	</script>
 </body>
 </html>
