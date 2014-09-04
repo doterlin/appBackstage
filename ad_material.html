@@ -37,7 +37,7 @@
 				</form>
 			</div>
 		</div>
-		<div class="alert_bg" style="display: none;"></div>
+		
 		<div class="screening">
 			<select class="">
 				<option value="" selected>全部物料</option>
@@ -134,21 +134,11 @@
 			</p>
 		</div>
 	</div>
-	<div class="comfirm" style="display: none;" >
-			<div class="comfirm_header"></div>
-			<div class="comfirm_content">
-				<form>
-					<div class="input_div" id="comfirm_msg" style="padding-top:0;"></div>
-					<div class="btn_center mt20" id="comfirm_footer">
-					</div>
-				</form>
-			</div>
-		</div>
 	<script type="text/javascript">
 	$("td a").click(function(){
 		if($(this).text()=="提交审核"){
-			$.comfirmWindow("提示","确认提交吗",'<a href="#" class="btn" id="comfirm_cencer">取消</a><a href="#" id="comfirm_comfirm" class="mr10 btn">确认</a>');
-			$.comfirmWindowClose("投放成功","投放计划ZXXX");
+			$.comfirmWindow("提示","确认将该广告物料提交管理员审核？",'<a href="#" class="btn" id="comfirm_cencer">取消</a><a href="#" id="comfirm_comfirm" class="mr10 btn">确认</a>');
+			$.comfirmWindowClose();
 		};
 	});
 	</script>

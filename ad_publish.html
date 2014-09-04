@@ -82,6 +82,14 @@
 		$("a:contains('投放中')").attr("href","ad_publish_launch.html");
 		$("a:contains('投放历史')").attr("href","ad_publish_history.html");
 	});
+	<script type="text/javascript">
+	$("td a").click(function(){
+		if($(this).text()=="提交审核"){
+			$.comfirmWindow("提示","确认提交吗",'<a href="#" class="btn" id="comfirm_cencer">取消</a><a href="#" id="comfirm_comfirm" class="mr10 btn">确认</a>');
+			$.comfirmWindowClose("投放成功","投放计划ZXXX");
+		};
+	});
+	</script>
 	</script>
 </body>
 </html>

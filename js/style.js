@@ -1,5 +1,44 @@
 $(document).ready(function(){
 
+	/* 确认框方法*/
+	jQuery.comfirmWindow = function(tittle,msg,footer){	
+		$(".alert_bg").show();
+		$(".comfirm").fadeIn("fast");
+		$("#comfirm_msg").append(msg);
+		$(".comfirm_header").append(tittle);
+		$("#comfirm_footer").append(footer);
+	};
+	jQuery.comfirmWindowClose = function(tittle,msg){
+
+		$("#comfirm_cencer").click(function(){	
+			$(".comfirm").fadeOut("fast");
+			$(".alert_bg").css("display","none");
+			$("#comfirm_msg").html('');
+			$(".comfirm_header").html('');
+			$("#comfirm_footer").html('');
+		});	/* 确认框 */
+		$("#comfirm_comfirm").click(function(){	
+					$(".comfirm").fadeOut("fast");
+					$(".alert_bg").css("display","none");
+					$("form").submit(); //提交表单.成功后下面显示提示
+					$(".comfirm").queue(function(){
+						$("#comfirm_msg").html('');
+						$(".comfirm_header").html('');
+						$("#comfirm_footer").html('');
+						if(tittle!=undefined){ //若未定义参数则再次弾框
+							$.comfirmWindow(tittle,msg,'<a href="#" class="btn" id="comfirm_cencer2">知道了</a>');
+							$("#comfirm_cencer2").click(function(){	
+								$(".comfirm").fadeOut("fast");
+								$(".alert_bg").css("display","none");
+								$("#comfirm_msg").html('');
+								$(".comfirm_header").html('');
+								$("#comfirm_footer").html('');
+							});
+						}
+						$(this).dequeue();
+					});	
+				});
+	};
 	/* 表格条纹 */
 	$("tbody>tr:odd").children().css("background-color","#EDEDED");
 	/* 按钮效果 */
@@ -8,6 +47,11 @@ $(document).ready(function(){
 	}).mouseout(function(){
 		$(this).removeClass("btn_hover").addClass("btn");
 	});
+
+	/*全局添加comfirm的html*/
+	var comfirm_html='<div class="alert_bg" style="display: none;"></div><div class="comfirm" style="display: none;" ><div class="comfirm_header"></div><div class="comfirm_content"><form><div class="input_div" id="comfirm_msg" style="padding-top:0;"></div><div class="btn_center mt20" id="comfirm_footer"></div></form></div></div>';
+	$("body").append(comfirm_html);
+
 	/* 全选 */
 	$("th :checkbox").change(function(){		
 		$("tr :checkbox").attr("checked",this.checked);;
@@ -23,7 +67,7 @@ $(document).ready(function(){
 	$("td:contains(撤销发布)").css("color","red");
 	$("td:contains(被退回)").css("color","red");
 
-	/*投放和等待审核中不可操作*/
+	/* 投放和等待审核中不可操作 */
 	$("td:contains(投放中)").siblings().children("a").parent().html('<span class="text_gray">不可操作</span>');
 
 	/* 新增 */
@@ -38,7 +82,7 @@ $(document).ready(function(){
 			$(".alert_bg").css("display","block");
 			$(".alert").not("#alert_2").fadeIn("fast");}
 	});
-	
+
 	$("td a").click(function(){
 		if($(this).text()=="紧急电话"){
 			$(".alert_bg").css("display","block");
@@ -52,12 +96,12 @@ $(document).ready(function(){
 	});
 	$(".btn_center a").click(function(){
 		if($(this).text()=="保存并提交审核"){
-			//预留位置，与“保存”区别对待
-			$("form").submit();
-			$(".alert").fadeOut("fast");
-			$(".alert_bg").css("display","none");}
+			//保存并提交审核，审核
+			$.comfirmWindow("提示","确认将该广告物料提交管理员审核？",'<a href="#" class="btn" id="comfirm_cencer">取消</a><a href="#" id="comfirm_comfirm" class="mr10 btn">确认</a>');
+			$.comfirmWindowClose();$(".alert").fadeOut("fast");
+		};
 	});
-	$("#cancel").click(function(){	
+	$("#cancel").click(function(){ //取消
 		$(".alert").fadeOut("fast");
 		$(".alert_bg").css("display","none");
 	});
@@ -65,6 +109,7 @@ $(document).ready(function(){
 		$(".alert").fadeOut("fast");
 		$(".alert_bg").css("display","none");
 	});
+
 	/* 获取图片路径并显示，可选删除*/
 	$("#img_upload").change(function(){
 		$("#img_display img").attr("src","images/u244.png");//修改此路径
@@ -75,44 +120,5 @@ $(document).ready(function(){
 		$("#img_display img").remove();
 	});
 
-	/* 确认框 */
-
-	jQuery.comfirmWindow = function(tittle,msg,footer){	
-		$(".alert_bg").show();
-		$(".comfirm").fadeIn("fast");
-		$("#comfirm_msg").append(msg);
-		$(".comfirm_header").append(tittle);
-		$("#comfirm_footer").append(footer);
-	};
-	jQuery.comfirmWindowClose = function(tittle,msg){
-		var tittle=tittle;
-		var msg=msg;
-		$("#comfirm_cencer").click(function(){	
-			$(".comfirm").fadeOut("fast");
-			$(".alert_bg").css("display","none");
-			$("#comfirm_msg").html('');
-			$(".comfirm_header").html('');
-			$("#comfirm_footer").html('');
-		});
-		$("#comfirm_comfirm").click(function(){	
-			$(".comfirm").fadeOut("fast");
-			$(".alert_bg").css("display","none");
-			$("form").submit(); //提交表单.成功后下面显示提示
-			$(".comfirm").queue(function(){
-				$("#comfirm_msg").html('');
-				$(".comfirm_header").html('');
-				$("#comfirm_footer").html('');
-				$.comfirmWindow(tittle,msg,'<a href="#" class="btn" id="comfirm_cencer2">知道了</a>');
-				$("#comfirm_cencer2").click(function(){	
-					$(".comfirm").fadeOut("fast");
-					$(".alert_bg").css("display","none");
-					$("#comfirm_msg").html('');
-					$(".comfirm_header").html('');
-					$("#comfirm_footer").html('');
-				});
-				$(this).dequeue();
-			});	
-		});
-	};
 
 });
