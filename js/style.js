@@ -10,7 +10,7 @@ $(document).ready(function(){
 	});
 	/* 全选 */
 	$("th :checkbox").change(function(){		
-			$("tr :checkbox").attr("checked",this.checked);;
+		$("tr :checkbox").attr("checked",this.checked);;
 	});
 
 	/* 状态颜色 */
@@ -24,7 +24,7 @@ $(document).ready(function(){
 	$("td:contains(被退回)").css("color","red");
 
 	/*投放和等待审核中不可操作*/
-
+	$("td:contains(投放中)").siblings().children("a").parent().html('<span class="text_gray">不可操作</span>');
 
 	/* 新增 */
 	$("#add").click(function(){
