@@ -52,5 +52,26 @@ $(document).ready(function(){
 	$("#img_display a").click(function(){
 		alert("111");
 		$("#img_display img").remove();
-	})
+	});
+
+	/* 确认框 */
+
+
+	jQuery.comfirmWindow = function(tittle,msg,footer){
+		$(".alert_bg").show();
+		$("#comfirm_msg").append(msg);
+		$(".comfirm_header").append(tittle);
+		$("#comfirm_footer").append(footer);
+		$(".comfirm").fadeIn("fast");
+	};
+	jQuery.comfirmWindowClose = function(tittle,msg){
+		$("#cancel").click(function(){	
+			$(".comfirm").fadeOut("fast");
+			$(".alert_bg").css("display","none");
+		});
+		$("#comfirm_comfirm").click(function(){	
+			(".comfirm").fadeOut("fast");
+			$.comfirmWindow(tittle,msg,"知道了")
+		});
+	};
 });

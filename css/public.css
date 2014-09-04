@@ -69,9 +69,10 @@ table.main td img{ width: 140px; }
 .input_div label{ text-align: right; display:inline-block; text-align:right; width: 110px;}
 
 /* 提示框/确认框 */
-.comfirm{ border:8px solid #909090; z-index:10001; width:300px; background:white; position:absolute; left:50%; top:20%; font-size:12px; margin-left:-100px; -webkit-box-shadow: 0 0 21px 1px rgba(0,0,0,0.86); -moz-box-shadow: 0 0 21px 1px rgba(0,0,0,0.86); box-shadow: 0 0 21px 1px rgba(0,0,0,0.86);}
+.comfirm{ border:8px solid #909090; z-index:10001; width:300px; background:white; position:absolute; left:30%; top:20%; font-size:12px; margin-left:-100px; -webkit-box-shadow: 0 0 21px 1px rgba(0,0,0,0.86); -moz-box-shadow: 0 0 21px 1px rgba(0,0,0,0.86); box-shadow: 0 0 21px 1px rgba(0,0,0,0.86);}
 .comfirm_header{ border-bottom: 3px solid #ccc; padding: 10px; text-align: center; font-size: 14px; font-weight: bold; background-color: #CBD8FC; -webkit-box-shadow: inset 0 1px 0 white; -moz-box-shadow: inset 0 1px 0 white;box-shadow: inset 0 1px 0 white;}
 .comfirm_content{ padding: 30px;}
+.comfirm_content #comfirm_msg{text-align: center;}
 
 /* 上传图片显示 */
 #img_display img{ width: 200px; margin-left: 120px;}
