@@ -65,13 +65,23 @@ $(document).ready(function(){
 		$(".comfirm").fadeIn("fast");
 	};
 	jQuery.comfirmWindowClose = function(tittle,msg){
-		$("#cancel").click(function(){	
+		$("#comfirm_cencer").click(function(){	
 			$(".comfirm").fadeOut("fast");
 			$(".alert_bg").css("display","none");
+			$("#comfirm_msg").html('');
+			$(".comfirm_header").html('');
+			$("#comfirm_footer").html('');
 		});
 		$("#comfirm_comfirm").click(function(){	
 			(".comfirm").fadeOut("fast");
 			$.comfirmWindow(tittle,msg,"知道了")
 		});
 	};
+
+	$("td a").click(function(){
+		if($(this).text()=="提交审核"){
+			$.comfirmWindow("提示","确认提交吗",'<a href="#" class="btn" id="comfirm_cencer">取消</a><a href="#" id="comfirm_comfirm" class="mr10 btn">确认</a>');
+			$.comfirmWindowClose("提交成功","投放计划ZXXX");
+		};
+	});
 });
