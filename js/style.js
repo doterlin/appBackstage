@@ -12,6 +12,7 @@ $(document).ready(function(){
 	$("th :checkbox").change(function(){		
 			$("tr :checkbox").attr("checked",this.checked);;
 	});
+
 	/* 状态颜色 */
 	$("td:contains(编辑)").css("color","blue");
 	$("td:contains(已发布)").css("color","green");
@@ -21,20 +22,40 @@ $(document).ready(function(){
 	$("td:contains(审核未通过)").css("color","red");
 	$("td:contains(撤销发布)").css("color","red");
 	$("td:contains(被退回)").css("color","red");
+
+	/*投放和等待审核中不可操作*/
+
+
 	/* 新增 */
 	$("#add").click(function(){
 		$(".alert_bg").css("display","block");
 		$(".alert").fadeIn("fast");
 	});
 	$("td a").click(function(){
-		if($(this).text()=="修改"){
+		var imgSrc=$(this).parent().prev().prev().prev().children().attr("src");
+		if($(this).text()=="修改" && $(".alert_header").text()=="广告物料"){
+			$("#img_display").children().attr("src",imgSrc);
 			$(".alert_bg").css("display","block");
 			$(".alert").not("#alert_2").fadeIn("fast");}
 	});
+	
 	$("td a").click(function(){
 		if($(this).text()=="紧急电话"){
 			$(".alert_bg").css("display","block");
 			$("#alert_2").fadeIn("fast");}
+	});
+	$(".btn_center a").click(function(){
+		if($(this).text()=="保存"){
+			$("form").submit();
+			$(".alert").fadeOut("fast");
+			$(".alert_bg").css("display","none");}
+	});
+	$(".btn_center a").click(function(){
+		if($(this).text()=="保存并提交审核"){
+			//预留位置，与“保存”区别对待
+			$("form").submit();
+			$(".alert").fadeOut("fast");
+			$(".alert_bg").css("display","none");}
 	});
 	$("#cancel").click(function(){	
 		$(".alert").fadeOut("fast");
@@ -90,10 +111,8 @@ $(document).ready(function(){
 					$("#comfirm_footer").html('');
 				});
 				$(this).dequeue();
-			})		
+			});	
 		});
 	};
-	
 
-	
 });

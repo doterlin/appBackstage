@@ -75,5 +75,5 @@ table.main td img{ width: 140px; }
 .comfirm_content #comfirm_msg{text-align: center;}
 
 /* 上传图片显示 */
-#img_display img{ width: 200px; margin-left: 120px;}
+#img_display img{ width: 290px; margin-left: 116px; border: 4px solid #BCBCBC;}
 .img_head{width: 100px;height: 100px;}
