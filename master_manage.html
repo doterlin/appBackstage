@@ -18,36 +18,36 @@
 					<div class="input_div">
 						<div class="input_div fl mt0">
 							<label for="infor_type" class="fl">达人头像：</label>
-							<a href="#"><img class="img_head"></a> <span class="text_gray tar">[ <a href="#" class="text_gray">删除</a> ]</span></div>
-						<div class="input_div  fr">
+							<a href="#"><img class="img_head" id="master_head"></a> <span class="text_gray tar">[ <a href="#" class="text_gray">更改</a> ]</span></div>
+						<div class="input_div fr">
 							<div class="input_div mt-10" >
 								<label for="master_sex">达人性别：</label>
-								<input type="radio" name="master_sex">
+								<input type="radio" name="master_sex" id="master_sex_girl">
 								美女
-								<input type="radio" name="master_sex" checked>
+								<input type="radio" name="master_sex" id="master_sex_boy" checked>
 								帅哥
-								<input type="radio" name="master_sex">不明</div>
+								<input type="radio" name="master_sex" id="master_sex_un">不明</div>
 							<div class="input_div">
 								<label for="">达人昵称：</label>
-								<input type="input"  name="" id="" value="" class="w180"></div>
+								<input type="input"  name="" id="master_name" value="" class="w160"></div>
 							<div class="input_div">
 								<label for="">达人头衔：</label>
-								<input type="input"  name="" id="" value="" class="w180"></div>
+								<input type="input"  name="" id="master_grade" value="" class="w160"></div>
 						</div>
 					</div>
 					<div class="input_div cb">
 						<label for="">达人签名：</label>
-						<input type="text" value="" class="w460"></div>
+						<input type="text" value="" id="master_signature" class="w400"></div>
 					<div class="input_div cb">
 						<div class="input_div fl lh22">
-							<label for="master_Recommend">是否推荐：</label>
-							<input type="radio" name="master_Recommend" checked>
+							<label for="master_recommend">是否推荐：</label>
+							<input type="radio" name="master_recommend" value="no" checked>
 							否
-							<input type="radio" name="master_Recommend">推荐关注</div>
+							<input type="radio" name="master_recommend" value="yes">推荐关注</div>
 						<div class="input_div fr">
 							<label for="">粉丝值修正：</label>
 							+
-							<input type="input" name="" id="" value="" class="w180"></div>
+							<input type="input" name="" id="master_fans" value="" class="w180"></div>
 					</div>
 					<div class="btn_center mt50 cb">
 						<a href="#" class="btn" id="cancel">取消</a>
@@ -87,12 +87,12 @@
 						<input type="checkbox"></td>
 					<td>1</td>
 					<td>林弯弯Yuki</td>
-					<td>女</td>
+					<td>男</td>
 					<td>美妆护肤达人</td>
-					<td>35</td>
-					<td>1126</td>
-					<td>323</td>
-					<td>1215</td>
+					<td>35000</td>
+					<td>1126000</td>
+					<td>32300000</td>
+					<td>1210000</td>
 					<td>
 						<a href="#">修改</a>
 					</td>
@@ -147,7 +147,7 @@
 						<input type="checkbox"></td>
 					<td>5</td>
 					<td>Prada小恶魔</td>
-					<td>女</td>
+					<td>不明</td>
 					<td>韩包选购达人</td>
 					<td>35</td>
 					<td>1126</td>
@@ -217,5 +217,30 @@
 			</p>
 		</div>
 	</div>
+	<script type="text/javascript">
+	$("td a").click(function(){
+		//var imgSrc=$(this).parent().prev().prev().prev().children().attr("src");
+		if($(this).text()=="修改" && $(".alert_header").text()=="自运营达人"){
+			/* 获取数据加入表单 */
+			$("#master_name").val($(this).parent().siblings(":eq(2)").text());
+			$("#master_grade").val($(this).parent().siblings(":eq(4)").text());
+			$("#master_fans").val($(this).parent().siblings(":eq(8)").text());
+			//$("#master_signature").val(); //达人签名表单
+			//$("#master_head").attr("src",""); //达人头像路径
+			if($(this).parent().siblings(":eq(3)").text()=="女"){ //获取性别
+				$("#master_sex_girl").attr("checked",true);
+			};
+			if($(this).parent().siblings(":eq(3)").text()=="男"){
+				$("#master_sex_boy").attr("checked",true);
+			};
+			if($(this).parent().siblings(":eq(3)").text()=="不明"){
+				$("#master_sex_un").attr("checked",true);
+			};
+
+			//$("#img_display").children().attr("src",imgSrc);
+			$(".alert_bg").css("display","block");
+			$(".alert").not("#alert_2").fadeIn("fast");}
+	});
+	</script>
 </body>
 </html>

@@ -73,12 +73,15 @@ $(document).ready(function(){
 
 	/* 投放和等待审核中不可操作 */
 	$("td:contains(投放中)").siblings().children("a").parent().html('<span class="text_gray">不可操作</span>');
+	$("td:contains(等待审核)").siblings().children("a").parent().html('<span class="text_gray">不可操作</span>');
 
 	/* 新增 */
 	$("#add").click(function(){
+		$(".alert").find("input").val("");//重置弹出框
 		$(".alert_bg").css("display","block");
 		$(".alert").fadeIn("fast");
 	});
+	/* 弹出框 */
 	$("td a").click(function(){
 		var imgSrc=$(this).parent().prev().prev().prev().children().attr("src");
 		if($(this).text()=="修改" && $(".alert_header").text()=="广告物料"){

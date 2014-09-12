@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>自定义商品属性</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/style.js"></script>
+	<link rel="stylesheet" href="editor/themes/default/default.css" />
+	<script charset="utf-8" src="editor/kindeditor-min.js"></script>
+	<script charset="utf-8" src="editor/lang/zh_CN.js"></script>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div class="alert" style="display: none;">
+			<div class="alert_header">自定义商品属性<small>当前城市：<span>首尔</span></small></div>
+			<div class="alert_content">
+				<form>
+					<div class="input_div" style="padding-top:0;">
+						<label for="">商品名称：</label>
+						<input type="input" name="" id="" value="商品价格" class="w230" ></div>
+					<div class="input_div">
+						<label for="goods_swi">属性类别：</label>
+						<input type="radio" name="goods_attr_name" id="">
+						普通文本
+						&nbsp;
+						<input type="radio" name="goods_attr_name" id="">大文本
+						&nbsp;
+						<input type="radio" name="goods_attr_name" id="" checked="checked">单张图片</div>
+					<div class="input_div">
+						<label for="goods_swi_2">是否启用：</label>
+						<input type="radio" name="goods_swi_2" id="" checked="checked">
+						是
+						&nbsp;
+						<input type="radio" name="goods_swi_2" id="">否</div>
+					<div class="btn_center mt20">
+						<a href="#" class="btn" id="cancel">取消</a>
+						<a href="#" class="mr10 btn">保存</a>
+					</div>
+
+				</form>
+			</div>
+		</div>
+		<div class="alert_bg" style="display: none;"></div>
+		<div class="screening">
+			<span class="lh22 mr10">当前所属分类：<span>化妆品</span></span>
+			<a href="#" class="fr mr10 btn"  id="add">+ 新增</a>
+			<a href="#" class="fr mr10 btn">- 删除</a>
+			<a href="javascript:history.go(-1);" class="fr btn">&lt; 返回</a>
+		</div>
+		<table  class="main" >
+			<thead>
+				<tr>
+					<th>
+						<input type="checkbox"></th>
+					<th>录入顺序</th>
+					<th>属性名称</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>1</td>
+					<td>商品规格</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>2</td>
+					<td>保质期限</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>3</td>
+					<td>适合人群</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>4</td>
+					<td>使用方法</td>
+					<td>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>5</td>
+					<td>注意事项</td>
+					<td>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="page_num mt10">
+			<p class="fl">共 5 项，共 1 页</p>
+			<p class="fr">
+				<a href="#">首页</a>
+				<a href="#">上一页</a>
+				当前是第
+				<span>1</span>
+				页
+				<a href="#">下一页</a>
+				<a href="#">尾页</a>
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+	/* 添加上下箭头和“修改"链接" */
+	$("tbody tr").find(":eq(4)").html('<a href="#">修改</a>&nbsp;&nbsp;<a href="#"><img src="images/arrowUp.png" style="width:18px; vertical-align:middle;"></a>&nbsp;<a href="#"><img src="images/arrowDown.png" style="width:18px; vertical-align:middle;"></a>');
+	$("tbody tr").first().find(":eq(4)").html('<a href="#">修改</a>&nbsp;&nbsp;<a href="#"><img src="images/arrowDown.png" style="width:18px; vertical-align:middle;"></a>');
+	$("tbody tr").last().find(":eq(4)").html('<a href="#">修改</a>&nbsp;&nbsp;<a href="#"><img src="images/arrowUp.png" style="width:18px; vertical-align:middle;"></a>');
+
+	/* 点击修改弹出 */
+	$("td a").click(function(){
+		var imgSrc=$(this).parent().prev().prev().prev().children().attr("src");
+		if($(this).text()=="修改"){
+			$("#img_display").children().attr("src",imgSrc);
+			$(".alert_bg").css("display","block");
+			$(".alert").not("#alert_2").fadeIn("fast");}
+	});
+	</script>
+</body>
+</html>

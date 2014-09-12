@@ -1,53 +1,50 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>信息类别管理</title>
+	<title>商品分类</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/layout.css">
 	<link rel="stylesheet" type="text/css" href="css/public.css">
 	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="js/style.js"></script>
+	<link rel="stylesheet" href="editor/themes/default/default.css" />
+	<script charset="utf-8" src="editor/kindeditor-min.js"></script>
+	<script charset="utf-8" src="editor/lang/zh_CN.js"></script>
 </head>
 <body>
 	<div id="container">
 		<div class="alert" style="display: none;">
-			<div class="alert_header">信息类别</div>
+			<div class="alert_header">商品分类</div>
 			<div class="alert_content">
 				<form>
 					<div class="input_div" style="padding-top:0;">
-						<label for="infor_type">所属分类：</label>
-						<input type="radio" name="infor_type" id="infor_type_U" checked="checked">
-						环球优享自有
-						&nbsp;
-						<input type="radio" name="infor_type" id="infor_type_termini">目的地信息</div>
-					<div class="input_div">
-						<label for="infor_name">分类名称：</label>
-						<input type="input" name="infor_name" id="infor_name" value="" class="w180"></div>
-					<div class="input_div">
-						<label for="infor_dir">指定目录：</label>
-						<input type="input"  name="infor_dir" id="infor_dir" value="" class="w180">
-						<span>
-							&nbsp;
-							<span class="star">*</span>
-							一旦保存成功，该项将无法修改
-						</span>
+						<label for="infor_type">所属父类：</label>
+						<select class="w140">
+							<option value="" selected>无（根目录）</option>
+						</select>
 					</div>
+					<div class="input_div">
+						<label for="">分类名称：</label>
+						<input type="input" name="goods_name" id="" value="化妆品" class="w230" ></div>
+					<div class="input_div">
+						<label for="goods_swi">是否启用：</label>
+						<input type="radio" name="goods_swi" id="" checked="checked">
+						是
+						&nbsp;
+						<input type="radio" name="goods_swi" id="">否</div>
 					<div class="btn_center mt20">
 						<a href="#" class="btn" id="cancel">取消</a>
 						<a href="#" class="mr10 btn">保存</a>
 					</div>
+
 				</form>
 			</div>
 		</div>
 		<div class="alert_bg" style="display: none;"></div>
 		<div class="screening">
-			<select>
-				<option value="" selected>请选择信息类别</option>
-				<option value="">环球优享</option>
-				<option value="">目的地信息</option>
-			</select>
-			<a href="#" class="fr mr10 btn" id="add">+ 新增</a>
+			<input type="search" class="w230" placeholder="请输入标题的关键字" autosave="aoao.org.cn" results="8" >
+			<input type="button" value="搜索" class="p4_15" >
+			<a href="#" class="fr mr10 btn"  id="add">+ 新增</a>
 			<a href="#" class="fr btn">- 删除</a>
 		</div>
 		<table  class="main" >
@@ -56,9 +53,7 @@
 					<th>
 						<input type="checkbox"></th>
 					<th>No</th>
-					<th>类别名称</th>
-					<th>类型</th>
-					<th>存放目录</th>
+					<th>分类名称</th>
 					<th>操作</th>
 				</tr>
 			</thead>
@@ -67,55 +62,70 @@
 					<td>
 						<input type="checkbox"></td>
 					<td>1</td>
-					<td>Wi-Fi 相关业务介绍</td>
-					<td>环球优享</td>
-					<td>/wifi</td>
+					<td>化妆品</td>
 					<td>
 						<a href="#">修改</a>
+						<a href="#">自定义商品属性</a>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<input type="checkbox"></td>
 					<td>2</td>
-					<td>U享会相关报道</td>
-					<td>环球优享</td>
-					<td>/uxh</td>
+					<td>箱包</td>
 					<td>
 						<a href="#">修改</a>
+						<a href="#">自定义商品属性</a>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<input type="checkbox"></td>
 					<td>3</td>
-					<td>旅游达人相关介绍</td>
-					<td>环球优享</td>
-					<td>/daren</td>
+					<td>香水</td>
 					<td>
 						<a href="#">修改</a>
+						<a href="#">自定义商品属性</a>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<input type="checkbox"></td>
-					<td>3</td>
-					<td>旅游达人相关介绍</td>
-					<td>环球优享</td>
-					<td>/daren</td>
+					<td>4</td>
+					<td>手表</td>
 					<td>
 						<a href="#">修改</a>
+						<a href="#">自定义商品属性</a>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<input type="checkbox"></td>
-					<td>3</td>
-					<td>旅游达人相关介绍</td>
-					<td>环球优享</td>
-					<td>/daren</td>
+					<td>5</td>
+					<td>饰品</td>
 					<td>
 						<a href="#">修改</a>
+						<a href="#">自定义商品属性</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>6</td>
+					<td>食品</td>
+					<td>
+						<a href="#">修改</a>
+						<a href="#">自定义商品属性</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>7</td>
+					<td>电子类</td>
+					<td>
+						<a href="#">修改</a>
+						<a href="#">自定义商品属性</a>
 					</td>
 				</tr>
 			</tbody>
@@ -134,6 +144,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
+	/* 点击修改弹出 */
 	$("td a").click(function(){
 		var imgSrc=$(this).parent().prev().prev().prev().children().attr("src");
 		if($(this).text()=="修改"){
@@ -141,6 +152,9 @@
 			$(".alert_bg").css("display","block");
 			$(".alert").not("#alert_2").fadeIn("fast");}
 	});
+
+	/* 添加链接 */
+		$("a:contains('自定义商品属性')").attr("href","goods_classify_attr.html");
 	</script>
 </body>
 </html>

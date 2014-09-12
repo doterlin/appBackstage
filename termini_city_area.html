@@ -72,5 +72,14 @@
 			</p>
 		</div>
 	</div>
+	<script type="text/javascript">
+	$("td a").click(function(){
+		var imgSrc=$(this).parent().prev().prev().prev().children().attr("src");
+		if($(this).text()=="修改"){
+			$("#img_display").children().attr("src",imgSrc);
+			$(".alert_bg").css("display","block");
+			$(".alert").not("#alert_2").fadeIn("fast");}
+	});
+	</script>
 </body>
 </html>

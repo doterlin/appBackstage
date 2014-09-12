@@ -36,7 +36,7 @@
 						<label for="" class="w110">城市名称：</label>
 						<input type="text"  name="" id="" value="" class="w230"></div>
 					<div class="btn_center mt20">
-						<a href="#" class="btn" id="cancel_1">取消</a>
+						<a href="#" class="btn" id="cancel">取消</a>
 						<a href="#" class="mr10 btn">保存</a>
 					</div>
 				</form>
@@ -131,5 +131,14 @@
 			</p>
 		</div>
 	</div>
+	<script type="text/javascript">
+	$("td a").click(function(){
+		var imgSrc=$(this).parent().prev().prev().prev().children().attr("src");
+		if($(this).text()=="修改"){
+			$("#img_display").children().attr("src",imgSrc);
+			$(".alert_bg").css("display","block");
+			$(".alert").not("#alert_2").fadeIn("fast");}
+	});
+	</script>
 </body>
 </html>
