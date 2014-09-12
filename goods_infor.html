@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>商品信息录入</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/style.js"></script>
+	<link rel="stylesheet" href="editor/themes/default/default.css" />
+	<script charset="utf-8" src="editor/kindeditor-min.js"></script>
+	<script charset="utf-8" src="editor/lang/zh_CN.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div class="alert" style="display: none;">
+			<div class="alert_header">商品信息录入</div>
+			<div class="alert_content">
+				<form>
+					
+					<div class="btn_center mt20">
+						<a href="#" class="btn" id="cancel">取消</a>
+						<a href="#" class="mr10 btn">保存</a>
+						<a href="#" class="mr10 btn">完成</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="alert" id="alert_2" style="display: none;">
+			<div class="alert_header">价格信息</div>
+			<div class="alert_content">
+				<form>
+					
+					<div class="btn_center mt20">
+						<a href="#" class="btn" id="cancel_2">取消</a>
+						<a href="#" class="mr10 btn">保存</a>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="alert_bg" style="display: none;"></div>
+		<div class="screening">
+			<select>
+				<option value="" selected>全部状态</option>
+				<option value="">编辑</option>
+				<option value="">完成</option>
+				<option value="">使用中</option>
+			</select>
+			<input type="search" class="w230" placeholder="请输入品牌的关键字" autosave="aoao.org.cn" results="8" >
+			<input type="button" value="搜索" class="p4_15" >
+			<a href="#" class="fr mr10 btn"  id="add">+ 新增</a>
+			<a href="#" class="fr btn">- 删除</a>
+		</div>
+		<table  class="main" >
+			<thead>
+				<tr>
+					<th>
+						<input type="checkbox"></th>
+					<th>No</th>
+					<th>状态</th>
+					<th>分类</th>
+					<th>商品代码</th>
+					<th>品牌</th>
+					<th>商品名称</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>1</td>
+					<td>编辑</td>
+					<td>化妆品</td>
+					<td>7010179153</td>
+					<td>悦诗风吟</td>
+					<td>火山岩泥毛孔清洁多效面膜 100ml</td>
+					<td>
+						<a href="#">价格</a>
+						<a href="#">修改</a>
+						<a href="#">完成</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>1</td>
+					<td>完成</td>
+					<td>化妆品</td>
+					<td>18919509731</td>
+					<td>兰芝</td>
+					<td>夜间修护锁水面膜（Water Sleepi...</td>
+					<td>
+						<a href="#">价格</a>
+						<a href="#">修改</a>
+						<a href="#">完成</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>1</td>
+					<td>使用中</td>
+					<td>化妆品</td>
+					<td>6011055724</td>
+					<td>赫拉</td>
+					<td>UV 清透 气垫粉底霜 #C21号 Coo...</td>
+					<td>
+						<a href="#">价格</a>
+						<a href="#">修改</a>
+						<a href="#">完成</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="page_num mt10">
+			<p class="fl">共 7 项，共 1 页</p>
+			<p class="fr">
+				<a href="#">首页</a>
+				<a href="#">上一页</a>
+				当前是第
+				<span>1</span>
+				页
+				<a href="#">下一页</a>
+				<a href="#">尾页</a>
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+	/* 点击修改弹出 */
+	$("td a").click(function(){
+		var imgSrc=$(this).parent().prev().prev().prev().children().attr("src");
+		if($(this).text()=="修改"){
+			$("#img_display").children().attr("src",imgSrc);
+			$(".alert_bg").css("display","block");
+			$(".alert").not("#alert_2").fadeIn("fast");}
+	});
+	
+	/* 完成状态不可点击完成,使用中不能操作 */
+	$("tbody tr td").each(function(){
+		if($(this).text()=="完成"){
+			$(this).next().next().next().next().next().find(":eq(2)").after('<span class="text_gray">完成<span>').remove();
+		};
+		if($(this).text()=="使用中"){
+			$(this).next().next().next().next().next().html('<span class="text_gray">价格<span> <span class="text_gray">修改<span> <span class="text_gray">完成<span>');
+		};
+	})
+	</script>
+</body>
+</html>

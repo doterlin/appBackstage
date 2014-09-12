@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>商品推荐排行榜</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/public.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/style.js"></script>
+	<link rel="stylesheet" href="editor/themes/default/default.css" />
+	<script charset="utf-8" src="editor/kindeditor-min.js"></script>
+	<script charset="utf-8" src="editor/lang/zh_CN.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div class="alert" style="display: none;">
+			<div class="alert_header">添加商品至排行榜</div>
+			<div class="alert_content">
+				<form>
+					<div class="input_div" style="padding-top:0;">
+						选择商品和设定排名
+					</div>
+					<div class="input_div bgc_gray">
+						<label for="">所属分类：</label>
+						<select class="w180">
+							<option value="" selected>请选择分类</option>
+							<option value="">化妆品</option>
+							<option value="">箱包</option>
+							<option value="">香水</option>
+							<option value="">手表</option>
+							<option value="">饰品</option>
+							<option value="">食品</option>
+							<option value="">电子类</option>
+						</select>
+						<br>
+						<label for="">所属品牌：</label>
+						<select class="w180">
+							<option value="" selected>请选择品牌</option>
+							<option value="">雪花秀/SULWHASOO</option>
+							<option value="">兰芝/LANEIGE</option>
+							<option value="">悦诗风吟/INNISFREE</option>
+							<option value="">赫拉/HERA</option>
+							<option value="">后/WHOO</option>
+							<option value="">伊思/IT'S SKIN</option>
+							<option value="">爱丽小屋/ETUDE HOUSE</option>
+						</select><br>
+						<label for="">商品选择：</label>
+						<select class="w180">
+							<option value="" selected>请选择商品</option>
+							<option value="">7010179153 火山岩泥毛孔清洁多效面膜 100ml</option>
+							<option value="">18919509731 夜间修护锁水面膜（Water Sleeping Pack EX）80ml</option>
+							<option value="">6011055724 UV 清透 气垫粉底霜 #C21号 Cool Vanilla Cover</option>
+						</select><br>
+						<label for="">排行榜排名：</label>
+						<input type="input" name="" id="" value="雪花秀" class="w180" >
+						<span>
+							&nbsp;
+							<span class="star">*</span>
+							注：原排行榜上的商品将顺序下移
+						</span>
+					</div>
+					<div class="input_div">
+						<label for="goods_swi">达人推荐：</label>
+						<input type="radio" name="goods_swi" id="" checked="checked">
+						自运营达人
+					</div>
+					<div class="input_div bgc_gray">
+						<label for="">选择达人：</label>
+						<select class="w180">
+							<option value="" selected>请选择达人</option>
+							<option value="">林弯弯Yuki</option>
+							<option value="">糖糖妞</option>
+							<option value="">请叫我女王陛下</option>
+							<option value="">Prada小恶魔</option>
+							<option value="">莉大无穷</option>
+							<option value="">Hello拇指姑娘</option>
+							<option value="">兔子多多</option>
+						</select><br>
+						<label for="" class="fl">推荐理由：</label>
+						<textarea valign="top"></textarea>
+					</div>
+					<div class="btn_center mt20">
+						<a href="#" class="btn" id="cancel">取消</a>
+						<a href="#" class="mr10 btn">保存</a>
+					</div>
+
+				</form>
+			</div>
+		</div>
+		<div class="alert_bg" style="display: none;"></div>
+		<div class="screening">
+			<select>
+				<option value="" selected>化妆品</option>
+				<option value="">箱包</option>
+				<option value="">香水</option>
+				<option value="">手表</option>
+				<option value="">饰品</option>
+				<option value="">食品</option>
+				<option value="">电子类</option>
+			</select>
+			<input type="search" class="w230" placeholder="请输入品牌的关键字" autosave="aoao.org.cn" results="8" >
+			<input type="button" value="搜索" class="p4_15" >
+			<a href="#" class="fr mr10 btn"  id="add">+ 新增</a>
+			<a href="#" class="fr btn">- 删除</a>
+		</div>
+		<table  class="main" >
+			<thead>
+				<tr>
+					<th>
+						<input type="checkbox"></th>
+					<th>排名</th>
+					<th>品牌</th>
+					<th>商品名称</th>
+					<th>推荐达人</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>1</td>
+					<td>悦诗风吟</td>
+					<td>火山岩泥毛孔清洁多效面膜 100ml</td>
+					<td>林弯弯Yuki</td>
+					<td>
+						<a href="#">修改替换</a>
+						<a href="#">调整排名</a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox"></td>
+					<td>1</td>
+					<td>兰芝</td>
+					<td>夜间修护锁水面膜（Water Sleeping Pack EX）80ml</td>
+					<td>糖糖妞</td>
+					<td>
+						<a href="#">修改替换</a>
+						<a href="#">调整排名</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="page_num mt10">
+			<p class="fl">共 7 项，共 1 页</p>
+			<p class="fr">
+				<a href="#">首页</a>
+				<a href="#">上一页</a>
+				当前是第
+				<span>1</span>
+				页
+				<a href="#">下一页</a>
+				<a href="#">尾页</a>
+			</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+	/* 点击修改弹出 */
+	$("td a").click(function(){
+		var imgSrc=$(this).parent().prev().prev().prev().children().attr("src");
+		if($(this).text()=="修改"){
+			$("#img_display").children().attr("src",imgSrc);
+			$(".alert_bg").css("display","block");
+			$(".alert").not("#alert_2").fadeIn("fast");}
+	});
+	</script>
+</body>
+</html>

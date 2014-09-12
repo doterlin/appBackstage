@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>自定义商品属性</title>
+	<title>品牌库</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/public.css">
@@ -10,32 +10,38 @@
 	<link rel="stylesheet" href="editor/themes/default/default.css" />
 	<script charset="utf-8" src="editor/kindeditor-min.js"></script>
 	<script charset="utf-8" src="editor/lang/zh_CN.js"></script>
-	<style type="text/css">
-	</style>
 </head>
 <body>
 	<div id="container">
 		<div class="alert" style="display: none;">
-			<div class="alert_header">自定义商品属性<small>当前城市：<span>首尔</span></small></div>
+			<div class="alert_header">品牌库</div>
 			<div class="alert_content">
 				<form>
 					<div class="input_div" style="padding-top:0;">
-						<label for="">商品名称：</label>
-						<input type="input" name="" id="" value="商品价格" class="w230" ></div>
+						<label for="infor_type">所属分类：</label>
+						<select class="w140">
+							<option value="" selected>全部分类</option>
+							<option value="">化妆品</option>
+							<option value="">箱包</option>
+							<option value="">香水</option>
+							<option value="">手表</option>
+							<option value="">饰品</option>
+							<option value="">食品</option>
+							<option value="">电子类</option>
+						</select>
+					</div>
 					<div class="input_div">
-						<label for="goods_swi">属性类别：</label>
-						<input type="radio" name="goods_attr_name" id="">
-						普通文本
-						&nbsp;
-						<input type="radio" name="goods_attr_name" id="">大文本
-						&nbsp;
-						<input type="radio" name="goods_attr_name" id="" checked="checked">单张图片</div>
+						<label for="">品牌名称：</label>
+						<input type="input" name="" id="" value="雪花秀" class="w230" ></div>
 					<div class="input_div">
-						<label for="goods_swi_2">是否启用：</label>
-						<input type="radio" name="goods_swi_2" id="" checked="checked">
-						是
-						&nbsp;
-						<input type="radio" name="goods_swi_2" id="">否</div>
+						<label for="">品牌别名：</label>
+						<input type="input" name="" id="" value="SULWHASOO" class="w230" ></div>
+					<div class="input_div">
+						<label for="">制造国：</label>
+						<input type="input" name="" id="" value="韩国" class="w230" ></div>
+					<div class="input_div">
+						<label for="">制造商及销售商：</label>
+						<input type="input" name="" id="" value="爱茉莉太平洋" class="w230" ></div>
 					<div class="btn_center mt20">
 						<a href="#" class="btn" id="cancel">取消</a>
 						<a href="#" class="mr10 btn">保存</a>
@@ -46,18 +52,30 @@
 		</div>
 		<div class="alert_bg" style="display: none;"></div>
 		<div class="screening">
-			<span class="lh22 mr10">当前所属分类：<span>化妆品</span></span>
+			<select>
+				<option value="" selected>全部分类</option>
+				<option value="">化妆品</option>
+				<option value="">箱包</option>
+				<option value="">香水</option>
+				<option value="">手表</option>
+				<option value="">饰品</option>
+				<option value="">食品</option>
+				<option value="">电子类</option>
+			</select>
+			<input type="search" class="w230" placeholder="请输入品牌的关键字" autosave="aoao.org.cn" results="8" >
+			<input type="button" value="搜索" class="p4_15" >
 			<a href="#" class="fr mr10 btn"  id="add">+ 新增</a>
-			<a href="#" class="fr mr10 btn">- 删除</a>
-			<a href="javascript:history.go(-1);" class="fr btn">&lt; 返回</a>
+			<a href="#" class="fr btn">- 删除</a>
 		</div>
 		<table  class="main" >
 			<thead>
 				<tr>
 					<th>
 						<input type="checkbox"></th>
-					<th>录入顺序</th>
-					<th>属性名称</th>
+					<th>No</th>
+					<th>分类</th>
+					<th>品牌名称</th>
+					<th>品牌别名</th>
 					<th>操作</th>
 				</tr>
 			</thead>
@@ -66,46 +84,50 @@
 					<td>
 						<input type="checkbox"></td>
 					<td>1</td>
-					<td>商品规格</td>
+					<td>化妆品</td>
+					<td>雪花秀</td>
+					<td>SULWHASOO</td>
 					<td>
+						<a href="#">修改</a>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<input type="checkbox"></td>
 					<td>2</td>
-					<td>保质期限</td>
+					<td>化妆品</td>
+					<td>兰芝</td>
+					<td>LANEIGE</td>
 					<td>
+						<a href="#">修改</a>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<input type="checkbox"></td>
 					<td>3</td>
-					<td>适合人群</td>
+					<td>化妆品</td>
+					<td>悦诗风吟</td>
+					<td>INNISFREE</td>
 					<td>
+						<a href="#">修改</a>
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<input type="checkbox"></td>
 					<td>4</td>
-					<td>使用方法</td>
+					<td>化妆品</td>
+					<td>赫拉</td>
+					<td>HERA</td>
 					<td>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="checkbox"></td>
-					<td>5</td>
-					<td>注意事项</td>
-					<td>
+						<a href="#">修改</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 		<div class="page_num mt10">
-			<p class="fl">共 5 项，共 1 页</p>
+			<p class="fl">共 7 项，共 1 页</p>
 			<p class="fr">
 				<a href="#">首页</a>
 				<a href="#">上一页</a>
@@ -118,11 +140,6 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-	/* 添加上下箭头和“修改"链接" */
-	$("tbody tr").find(":eq(4)").html('<a href="#">修改</a>&nbsp;&nbsp;<a href="#"><img src="images/arrowUp.png" style="width:15px; vertical-align:middle;"></a>&nbsp;<a href="#"><img src="images/arrowDown.png" style="width:15px; vertical-align:middle;"></a>');
-	$("tbody tr").first().find(":eq(4)").html('<a href="#">修改</a>&nbsp;&nbsp;<a href="#"><img src="images/arrowDown.png" style="width:15px; vertical-align:middle;"></a>');
-	$("tbody tr").last().find(":eq(4)").html('<a href="#">修改</a>&nbsp;&nbsp;<a href="#"><img src="images/arrowUp.png" style="width:15px; vertical-align:middle;"></a>');
-
 	/* 点击修改弹出 */
 	$("td a").click(function(){
 		var imgSrc=$(this).parent().prev().prev().prev().children().attr("src");

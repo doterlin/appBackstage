@@ -41,8 +41,11 @@ tbody{ font-weight: normal;}
 .ml50{ margin-left: 50px;}
 .lh22{ line-height: 22px;}
 .gbc_blue{ background-color: #D3E1F1;}
+.bgc_w{ background-color: #fff;}
+.bgc_gray{  background-color: #F2F2F2;}
 .c1{color: #666;}
 .text_gray{ color: #666;}
+.bdc_w{  border-color: #fff;}
 .bdc_gray{ border-color: #797979;}
 .btn{  color: #666; background-image: -moz-linear-gradient(top, #fff, #BCD6F5); /* Firefox */
 background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #DBEAFC), color-stop(1, #BCD6F5)); /* Saf4+, Chrome */
@@ -68,7 +71,7 @@ table.main td img{ width: 140px; }
 .alert_header small{ margin-left: 10px; color: #666; font-weight: normal;}
 .alert_content{ padding: 30px;}
 .input_div label{ text-align: right; display:inline-block; text-align:right; width: 110px;}
-
+.input_div textarea{ width: 350px; height: 100px; margin-left: 5px;}
 /* 提示框/确认框 */
 .comfirm{ border:8px solid #909090; z-index:10001; width:300px; background:white; position:absolute; left:30%; top:20%; font-size:12px; margin-left:-100px; -webkit-box-shadow: 0 0 21px 1px rgba(0,0,0,0.86); -moz-box-shadow: 0 0 21px 1px rgba(0,0,0,0.86); box-shadow: 0 0 21px 1px rgba(0,0,0,0.86);}
 .comfirm_header{ border-bottom: 3px solid #ccc; padding: 10px; text-align: center; font-size: 14px; font-weight: bold; background-color: #CBD8FC; -webkit-box-shadow: inset 0 1px 0 white; -moz-box-shadow: inset 0 1px 0 white;box-shadow: inset 0 1px 0 white;}

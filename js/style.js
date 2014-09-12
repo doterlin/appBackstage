@@ -63,11 +63,13 @@ $(document).ready(function(){
 
 	/* 状态颜色 */
 	$("td:contains(编辑)").css("color","blue");
+	$("td:contains(使用中)").css("color","green");
 	$("td:contains(已发布)").css("color","green");
 	$("td:contains(投放中)").css("color","green");
 	$("td:contains(等待审核)").css("color","gray");
 	$("td:contains(投放结束)").css("color","gray");
 	$("td:contains(审核未通过)").css("color","red");
+	$("td:contains(完成)").css("color","red");
 	$("td:contains(撤销发布)").css("color","red");
 	$("td:contains(被退回)").css("color","red");
 
@@ -77,9 +79,10 @@ $(document).ready(function(){
 
 	/* 新增 */
 	$("#add").click(function(){
-		$(".alert").find("input").val("");//重置弹出框
+		$(".alert").not("#alert_2").find("input").val("");//重置弹出框
+		$(".alert").not("#alert_2").find("textarea").val("");//重置弹出框
 		$(".alert_bg").css("display","block");
-		$(".alert").fadeIn("fast");
+		$(".alert").not("#alert_2").fadeIn("fast");
 	});
 	/* 弹出框 */
 	$("td a").click(function(){
@@ -91,7 +94,7 @@ $(document).ready(function(){
 	});
 
 	$("td a").click(function(){
-		if($(this).text()=="紧急电话"){
+		if($(this).text()=="紧急电话" || $(this).text()=="价格"){
 			$(".alert_bg").css("display","block");
 			$("#alert_2").fadeIn("fast");}
 	});
