@@ -17,11 +17,62 @@
 			<div class="alert_header">商品信息录入</div>
 			<div class="alert_content">
 				<form>
-					
+					<div class="input_div" style="padding-top:0;">商品图片上传（最多5张）</div>
+					<div class="input_div bgc_gray">
+						<input type="file" class="ml10" multiple>
+						<ul class="img_display_sm"><li><img src="images/u246.png"></li><li><img src="images/u244.png"></li><li><img src="images/u246.png"></li><li><img src="images/u244.png"></li></ul>
+					</div>
+					<div class="input_div mt10 cb" style="padding-top:0;">商品基本属性</div>
+					<div class="input_div bgc_gray">
+						<label for="">所属分类：</label>
+						<select class="w180">
+							<option value="" selected>请选择分类</option>
+							<option value="">化妆品</option>
+							<option value="">箱包</option>
+							<option value="">香水</option>
+							<option value="">手表</option>
+							<option value="">饰品</option>
+							<option value="">食品</option>
+							<option value="">电子类</option>
+						</select>
+						<br>
+						<label for="">所属品牌：</label>
+						<select class="w180">
+							<option value="" selected>请选择品牌</option>
+							<option value="">雪花秀/SULWHASOO</option>
+							<option value="">兰芝/LANEIGE</option>
+							<option value="">悦诗风吟/INNISFREE</option>
+							<option value="">赫拉/HERA</option>
+							<option value="">后/WHOO</option>
+							<option value="">伊思/IT'S SKIN</option>
+							<option value="">爱丽小屋/ETUDE HOUSE</option>
+						</select>
+						<br>
+						<label for="">商品名称：</label>
+						<input type="text" class="w230"></div>
+					<div class="input_div mt10" style="padding-top:0;">商品自定义属性</div>
+					<div class="input_div  bgc_gray">
+						<label for="">商品规格：</label>
+						<input type="text" class="w230">
+						<br>
+						<label for="">保质期限：</label>
+						<input type="text" class="w230">
+						<br>
+						<label for="">适合人群：</label>
+						<input type="text" class="w230">
+						<br>
+						<label for="" class="fl">主要成分：</label>
+						<textarea valign="top"></textarea>
+						<br>
+						<label for="" class="fl">使用方法：</label>
+						<textarea valign="top"></textarea>
+						<br>
+						<label for="" class="fl">注意事项：</label>
+						<textarea valign="top"></textarea>
+					</div>
 					<div class="btn_center mt20">
 						<a href="#" class="btn" id="cancel">取消</a>
 						<a href="#" class="mr10 btn">保存</a>
-						<a href="#" class="mr10 btn">完成</a>
 					</div>
 				</form>
 			</div>
@@ -30,11 +81,42 @@
 			<div class="alert_header">价格信息</div>
 			<div class="alert_content">
 				<form>
-					
+					<div class="input_div">
+						<span>店铺</span>
+						<select class="w100">
+							<option value="" checked>请选择分类</option>
+							<option value="">免税店</option>
+							<option value="">百货店</option>
+							<option value="">购物街</option>
+							<option value="">特卖场</option>
+							<option value="">集市</option>
+							<option value="">土特产</option>
+							<option value="">纪念品</option>
+						</select>
+						<select class="w80">
+							<option value=""checked>请选择店铺</option>
+							<option value="">新罗免税店</option>
+							<option value="">乐天免税店</option>
+							<option value="">华克山庄免税店</option>
+						</select>
+						<span>&nbsp;参考价</span>
+						<select class="w50">
+							<option value=""checked>请选择货币</option>
+							<option value="">$</option>
+							<option value="">JPY¥</option>
+							<option value="">₩</option>
+							<option value="">€</option>
+						</select>
+						<input type="text" class="w50">
+						<span>&nbsp;约 ¥</span><input type="text" class="w50">
+						
+						<a href="#" class="form_add"><img src="images/btn_add.png" class="form_num_btn"></a>
+					</div>
 					<div class="btn_center mt20">
 						<a href="#" class="btn" id="cancel_2">取消</a>
 						<a href="#" class="mr10 btn">保存</a>
 					</div>
+
 				</form>
 			</div>
 		</div>
@@ -144,7 +226,23 @@
 		if($(this).text()=="使用中"){
 			$(this).next().next().next().next().next().html('<span class="text_gray">价格<span> <span class="text_gray">修改<span> <span class="text_gray">完成<span>');
 		};
-	})
+	});
+
+	/* alert_2窗口的删除和增加表单小按钮 */
+	var inputLine = '<div class="input_div"><span>店铺</span> <select class="w100"><option value="" checked>请选择分类</option><option value="">免税店</option><option value="">百货店</option><option value="">购物街</option><option value="">特卖场</option><option value="">集市</option><option value="">土特产</option><option value="">纪念品</option></select> <select class="w80"><option value=""checked>请选择店铺</option><option value="">新罗免税店</option><option value="">乐天免税店</option><option value="">华克山庄免税店</option></select><span> &nbsp;参考价</span> <select class="w50"><option value=""checked>请选择货币</option><option value="">$</option><option value="">JPY¥</option><option value="">₩</option><option value="">€</option></select> <input type="text" class="w50"> <span>&nbsp;约 ¥</span><input type="text" class="w50"> <a href="#" class="form_dec"><img src="images/btn_dec.png" class="form_num_btn"></a> </div>'
+	
+	$("a.form_add").click(function(){
+		$(this).parent().after(inputLine);
+
+		$("a.form_dec").click(function(){
+			$(this).parent().slideUp("fast");
+			$(this).parent().queue(function() {
+  				$(this).remove();
+  				$(this).dequeue();
+				});
+		});
+	});
+
 	</script>
 </body>
 </html>
