@@ -22,28 +22,28 @@ $(document).ready(function(){
 			$("#comfirm_footer").html('');
 		});	/* 确认框 */
 		$("#comfirm_comfirm").click(function(){	
-					$(".comfirm").fadeOut("fast");
-					$(".alert_bg").css("display","none");
+			$(".comfirm").fadeOut("fast");
+			$(".alert_bg").css("display","none");
 					
-					$(".comfirm").queue(function(){
-						//提交表单.成功后下面显示提示
+			$(".comfirm").queue(function(){
+				//提交表单.成功后下面显示提示
+				$("#comfirm_msg").html('');
+				$(".comfirm_header").html('');
+				$("#comfirm_footer").html('');
+				if(tittle!=undefined){ //若未定义参数则再次弾框
+					$.comfirmWindow(tittle,msg,'<a href="#" class="btn" id="comfirm_cencer2">知道了</a>');
+					$("#comfirm_cencer2").click(function(){	
+						$(".comfirm").fadeOut("fast");
+						$(".alert_bg").css("display","none");
 						$("#comfirm_msg").html('');
 						$(".comfirm_header").html('');
 						$("#comfirm_footer").html('');
-						if(tittle!=undefined){ //若未定义参数则再次弾框
-							$.comfirmWindow(tittle,msg,'<a href="#" class="btn" id="comfirm_cencer2">知道了</a>');
-							$("#comfirm_cencer2").click(function(){	
-								$(".comfirm").fadeOut("fast");
-								$(".alert_bg").css("display","none");
-								$("#comfirm_msg").html('');
-								$(".comfirm_header").html('');
-								$("#comfirm_footer").html('');
-								$("form").submit(); 
-							});
-						}
-						$(this).dequeue();
-					});	
-				});
+						$("form").submit(); 
+					});
+				}
+				$(this).dequeue();
+			});	
+		});
 	};
 	/* 表格条纹 */
 	$("tbody>tr:odd").children().css("background-color","#EDEDED");
